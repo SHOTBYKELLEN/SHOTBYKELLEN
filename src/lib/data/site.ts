@@ -1,0 +1,37 @@
+export const siteConfig = {
+  name: "ShotByKellen",
+  title: "ShotByKellen | Sports, Lifestyle & Event Photography — Lehigh Valley, PA",
+  description:
+    "ShotByKellen is a freelance photography and videography studio based in the Lehigh Valley, Pennsylvania, specializing in sports photography, cinematic videography, lifestyle, portraits, and events.",
+  url: "https://www.shotbykellen.com",
+  ogImage: "https://images.unsplash.com/photo-1554080353-a576cf803bda?q=80&w=1200&auto=format&fit=crop",
+  keywords: [
+    "photographer Lehigh Valley",
+    "sports photographer Pennsylvania",
+    "sports videography",
+    "senior photos Lehigh Valley",
+    "prom photographer PA",
+    "event photographer Pennsylvania",
+    "lifestyle photographer",
+    "team media day photography",
+    "ShotByKellen",
+  ],
+  author: "Kellen",
+  email: "kellens.photography1@gmail.com",
+  phone: "(484) 555-0173",
+  location: "Lehigh Valley, PA",
+  instagramHandle: "@shot.bykellen",
+  social: {
+    instagram: "https://www.instagram.com/shot.bykellen/",
+    tiktok: "https://tiktok.com/@shotbykellen",
+    youtube: "https://youtube.com/@shotbykellen",
+  },
+  nav: [
+    { label: "Home", href: "#home" },
+    { label: "Portfolio", href: "#portfolio" },
+    { label: "Services", href: "#services" },
+    { label: "About", href: "#about" },
+    { label: "Testimonials", href: "#testimonials" },
+    { label: "Contact", href: "#contact" },
+  ],
+};
