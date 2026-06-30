@@ -4,7 +4,6 @@ export const siteConfig = {
   description:
     "ShotByKellen is a freelance photography and videography studio based in the Lehigh Valley, Pennsylvania, specializing in sports photography, cinematic videography, lifestyle, portraits, and events.",
   url: "https://www.shotbykellen.com",
-  ogImage: "https://images.unsplash.com/photo-1554080353-a576cf803bda?q=80&w=1200&auto=format&fit=crop",
   keywords: [
     "photographer Lehigh Valley",
     "sports photographer Pennsylvania",
