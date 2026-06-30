@@ -36,6 +36,11 @@ yarn-error.log*
 # vercel
 .vercel
 
+# original uncompressed image backups (not needed in deploy)
+**/.orig_backup/
+public/video/*.MOV
+public/video/*.mov
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

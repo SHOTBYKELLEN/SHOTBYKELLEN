@@ -13,14 +13,13 @@ import { cn } from "@/lib/utils";
 import Reveal from "@/components/ui/reveal";
 import Lightbox from "@/components/ui/lightbox";
 
-type Filter = PortfolioCategory | "All";
-
 export default function Portfolio() {
-  const [filter, setFilter] = useState<Filter>("All");
+  const [filter, setFilter] = useState<PortfolioCategory>(
+    portfolioCategories[0]
+  );
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const filteredItems = useMemo(() => {
-    if (filter === "All") return portfolioItems;
     return portfolioItems.filter((item) => item.category === filter);
   }, [filter]);
 
@@ -38,7 +37,7 @@ export default function Portfolio() {
 
         <Reveal delay={0.1}>
           <div className="mt-10 flex flex-wrap gap-2">
-            {(["All", ...portfolioCategories] as Filter[]).map((category) => (
+            {portfolioCategories.map((category) => (
               <button
                 key={category}
                 onClick={() => setFilter(category)}
@@ -82,9 +81,6 @@ export default function Portfolio() {
               <div className="absolute inset-0 flex flex-col items-start justify-end bg-gradient-to-t from-black/80 via-black/10 to-transparent p-5 opacity-0 transition-opacity duration-400 group-hover:opacity-100">
                 <span className="text-xs uppercase tracking-widest text-white/70">
                   {item.category}
-                </span>
-                <span className="font-display mt-1 text-lg text-white">
-                  {item.title}
                 </span>
               </div>
               {item.isVideo && (

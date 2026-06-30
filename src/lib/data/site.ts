@@ -20,7 +20,6 @@ export const siteConfig = {
   email: "kellens.photography1@gmail.com",
   phone: "(484) 555-0173",
   location: "Lehigh Valley, PA",
-  instagramHandle: "@shot.bykellen",
   social: {
     instagram: "https://www.instagram.com/shot.bykellen/",
     tiktok: "https://tiktok.com/@shotbykellen",

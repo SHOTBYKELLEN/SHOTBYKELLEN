@@ -92,7 +92,7 @@ export default function Contact() {
               className="mt-8 inline-flex items-center gap-2 rounded-full border border-white/30 px-6 py-3 text-sm font-medium text-white transition-colors hover:border-white hover:bg-white hover:text-black"
             >
               <AtSign className="h-4 w-4" />
-              Follow {siteConfig.instagramHandle} on Instagram
+              Follow Me on Instagram
             </a>
           </Reveal>
 

@@ -2,7 +2,7 @@ import Hero from "@/components/sections/hero";
 import Portfolio from "@/components/sections/portfolio";
 import Services from "@/components/sections/services";
 import About from "@/components/sections/about";
-import FeaturedWork from "@/components/sections/featured-work";
+import Experience from "@/components/sections/experience";
 import Testimonials from "@/components/sections/testimonials";
 import BookingCTA from "@/components/sections/booking-cta";
 import Contact from "@/components/sections/contact";
@@ -19,7 +19,7 @@ export default function Home() {
       <SectionDivider />
       <About />
       <SectionDivider />
-      <FeaturedWork />
+      <Experience />
       <SectionDivider />
       <Testimonials />
       <BookingCTA />

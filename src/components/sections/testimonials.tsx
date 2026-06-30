@@ -1,14 +1,15 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import Image from "next/image";
+import { useEffect, useState, useCallback, useRef } from "react";
+import { AnimatePresence, motion, useInView } from "framer-motion";
 import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 import { testimonials } from "@/lib/data/testimonials";
 import Reveal from "@/components/ui/reveal";
 
 export default function Testimonials() {
   const [index, setIndex] = useState(0);
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(sectionRef, { amount: 0.4 });
 
   const next = useCallback(() => {
     setIndex((i) => (i + 1) % testimonials.length);
@@ -19,14 +20,15 @@ export default function Testimonials() {
   }, []);
 
   useEffect(() => {
+    if (!isInView) return;
     const interval = setInterval(next, 6000);
     return () => clearInterval(interval);
-  }, [next]);
+  }, [next, isInView]);
 
   const current = testimonials[index];
 
   return (
-    <section id="testimonials" className="relative py-28 sm:py-36">
+    <section id="testimonials" ref={sectionRef} className="relative py-28 sm:py-36">
       <div className="mx-auto max-w-4xl px-6 lg:px-10">
         <Reveal className="text-center">
           <p className="text-xs font-medium uppercase tracking-[0.3em] text-white/50">
@@ -44,8 +46,8 @@ export default function Testimonials() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -16 }}
-              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-              className="glass rounded-2xl p-8 text-center sm:p-12"
+              transition={{ duration: 0.4, ease: "easeOut" }}
+              className="glass rounded-2xl p-8 text-center will-change-transform sm:p-12"
             >
               <div className="flex justify-center gap-1">
                 {Array.from({ length: current.rating }).map((_, i) => (
@@ -59,23 +61,6 @@ export default function Testimonials() {
               <p className="font-display mt-6 text-xl leading-relaxed text-white sm:text-2xl">
                 &ldquo;{current.quote}&rdquo;
               </p>
-              <div className="mt-8 flex items-center justify-center gap-3">
-                <div className="relative h-11 w-11 overflow-hidden rounded-full">
-                  <Image
-                    src={current.avatar}
-                    alt={current.name}
-                    fill
-                    sizes="44px"
-                    className="object-cover"
-                  />
-                </div>
-                <div className="text-left">
-                  <p className="text-sm font-medium text-white">
-                    {current.name}
-                  </p>
-                  <p className="text-xs text-white/50">{current.role}</p>
-                </div>
-              </div>
             </motion.div>
           </AnimatePresence>
 

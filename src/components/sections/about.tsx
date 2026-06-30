@@ -10,7 +10,7 @@ export default function About() {
         <Reveal direction="left">
           <div className="relative aspect-[4/5] w-full overflow-hidden rounded-lg">
             <Image
-              src="https://picsum.photos/seed/sbk-about/1000/1250"
+              src="/IMG_7013.JPG"
               alt="Kellen, founder of ShotByKellen, on location"
               fill
               sizes="(min-width: 1024px) 50vw, 100vw"

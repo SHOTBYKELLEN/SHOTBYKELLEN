@@ -103,22 +103,31 @@ export default function Lightbox({
             className="relative flex max-h-full max-w-4xl flex-col items-center"
           >
             <div className="relative max-h-[80vh] w-full overflow-hidden rounded-md">
-              <Image
-                src={item.image}
-                alt={item.title}
-                width={item.width}
-                height={item.height}
-                className="max-h-[80vh] w-auto object-contain"
-                sizes="90vw"
-              />
+              {item.isVideo && item.video ? (
+                <video
+                  key={item.video}
+                  src={item.video}
+                  poster={item.image}
+                  controls
+                  autoPlay
+                  playsInline
+                  className="max-h-[80vh] w-auto object-contain"
+                />
+              ) : (
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  width={item.width}
+                  height={item.height}
+                  className="max-h-[80vh] w-auto object-contain"
+                  sizes="90vw"
+                />
+              )}
             </div>
             <div className="mt-4 text-center">
               <p className="text-sm uppercase tracking-widest text-white/50">
                 {item.category}
               </p>
-              <h3 className="font-display mt-1 text-xl text-white">
-                {item.title}
-              </h3>
             </div>
           </motion.div>
         </motion.div>
